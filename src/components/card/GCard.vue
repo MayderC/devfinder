@@ -2,6 +2,8 @@
 
 .card
 
+  <!-- HEADER CARD 3 sections, AVATAR, INFO, DATE -->
+
   .card__header
     .card__header__avatar.card__header__item
       img(src="https://avatars.githubusercontent.com/u/44930667?v=4")
@@ -10,22 +12,59 @@
       h2.name MayderC
       p.user @mayderc
       p.bio this profile has not bio
+
     .card__header__date.card__header__item
       p 2018-11-10T19:37:42Z
 
+  <!-- BODY CARD 2 section,  -->
+
   .card__body
+
+    <!--Section 1-->
     .card__body__info.card__info
+
       .card__body__repos.info__item
-        p 18
+        p.text Repos
+        p.info 18
+
       .card__body__follow.info__item
-        p 200
+        p.text Followers
+        p.info 200
+
       .card__body__following.info__item
-        p 10
-    .card__body__links.card__body
+        p.text Following
+        p.info 10
+
+
+
+    <!--Section 2-->
+    .card__body__links
+      .card__link
+
+        .link__location.link
+          img(src="../../assets/img/link.svg")
+          p link
+
+        .link__blog.link
+          img(src="../../assets/img/link.svg")
+          p link
+
+      .card__link
+
+        .link__tw.link
+          img(src="../../assets/img/link.svg")
+          p link
+
+        .link__github.link
+          img(src="../../assets/img/link.svg")
+          p link
 
 </template>
 
 <script>
+
+import api from '../../api/getData'
+
 export default {
   name: 'GCard',
   props: {
@@ -35,7 +74,24 @@ export default {
     return {
       info : []
     }
+  },
+
+  created(){
+
+    this.getInfo()
+
+  },
+
+  methods: {
+
+    getInfo(user = "vuejs"){
+      api.getData(user).then(res => this.info = res)
+    }
+
   }
+
+
+
 }
 </script>
 
@@ -80,12 +136,53 @@ export default {
     border: solid 1px black
 
   .card__body
-
+    display: flex
+    flex-direction: column
+    height: 55%
 
   .card__info
+    width: calc( 100% )
+    align-self: flex-end
     color: white
     background: #141c2f
     border-radius: 10px
-    height: 80px
+    height: 45%
+    display: flex
+
+  .info__item
+    width: 33%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: self-start
+    padding: 40px
+
+  .card__body__links
+    height: 55%
+    display: flex
+
+  .card__link
+    width: 50%
+    padding: 15px
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+
+  .link
+    display: flex
+    justify-content: center
+
+  .link > img
+    margin-right: 10px
+    width: 15px
+
+  .link > p
+    color: white
+
+  .info__item > .text
+    color: gray
+  
+
+  
 
 </style>
