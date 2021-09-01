@@ -2,7 +2,8 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
-    info : "May"
+    info : {},
+    isLight : false
   },
   mutations: {
   },

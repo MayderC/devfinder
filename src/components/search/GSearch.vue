@@ -1,5 +1,5 @@
 <template lang="pug">
-.search
+.search(:class="[$store.state.isLight? 'light-s' : 'dark-s']")
   img(src="../../assets/img/lupa.svg").icon
   input(type="text" @keyup.enter="show" placeholder="Search GitHub username.." autofocus).input
   g-buttom-main(:btnText="propButtom" @click="show")
@@ -26,8 +26,9 @@ export default {
 
 <style lang="sass" scoped>
 
+  @import '../../assets/sass/theme'
+
   .search
-    background: #1f2a48
     height: 50px
     border-radius: 10px
     display: flex

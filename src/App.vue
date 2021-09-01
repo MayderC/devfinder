@@ -15,10 +15,11 @@ export default {
 </script>
 
 <style lang="sass">
+  @import './assets/sass/variables'
 
   body 
     margin: 0
-    background: #141c2f
+    background: $primary-d
     min-height: 100vh
     font-family: 'Quicksand', sans-serif
     display: flex
