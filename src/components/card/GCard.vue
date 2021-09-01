@@ -9,9 +9,9 @@
       img(src="https://avatars.githubusercontent.com/u/44930667?v=4")
 
     .card__header__name.card__header__item
-      h2.name MayderC
-      p.user @mayderc
-      p.bio this profile has not bio
+      h2.name {{info.name}}
+      p.user {{info.login}}
+      p.bio {{info.bio}}
 
     .card__header__date.card__header__item
       p 2018-11-10T19:37:42Z
@@ -25,15 +25,15 @@
 
       .card__body__repos.info__item
         p.text Repos
-        p.info 18
+        p.info {{info.public_repos}}
 
       .card__body__follow.info__item
         p.text Followers
-        p.info 200
+        p.info {{info.followers}}
 
       .card__body__following.info__item
         p.text Following
-        p.info 10
+        p.info {{info.following}}
 
 
 
@@ -43,21 +43,24 @@
 
         .link__location.link
           img(src="../../assets/img/link.svg")
-          p link
+          p(v-if="info.location" v-text="info.location")
+          p(v-else style="color: gray; text-decoration: none;") not aviable  
 
         .link__blog.link
           img(src="../../assets/img/link.svg")
-          p link
+          p(v-if="info.blog" v-text="info.blog")
+          p(v-else style="color: gray; text-decoration: none;") not aviable          
 
       .card__link
 
         .link__tw.link
           img(src="../../assets/img/link.svg")
-          p link
-
+          p(v-if="info.twitter_username" v-text="info.twitter_username")
+          p(v-else style="color: gray; text-decoration: none;") not aviable
+          
         .link__github.link
           img(src="../../assets/img/link.svg")
-          p link
+          p {{info.html_url}}
 
 </template>
 
@@ -67,31 +70,19 @@ import api from '../../api/getData'
 
 export default {
   name: 'GCard',
-  props: {
-    msg: String
-  },
   data(){
     return {
       info : []
     }
   },
-
   created(){
-
     this.getInfo()
-
   },
-
   methods: {
-
-    getInfo(user = "vuejs"){
+    getInfo(user = "mayderc"){
       api.getData(user).then(res => this.info = res)
     }
-
   }
-
-
-
 }
 </script>
 
@@ -165,8 +156,10 @@ export default {
     width: 50%
     padding: 15px
     display: flex
+    font-size: 15px
     flex-direction: column
     justify-content: space-around
+    align-items: self-start
 
   .link
     display: flex
@@ -177,7 +170,9 @@ export default {
     width: 15px
 
   .link > p
-    color: white
+    color: #E1E1E1
+    text-decoration: underline
+    padding: 5px
 
   .info__item > .text
     color: gray
