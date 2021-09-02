@@ -1,5 +1,7 @@
 <template lang="pug">
+
 g-main
+
 </template>
 
 <script>
