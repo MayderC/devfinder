@@ -1,7 +1,5 @@
 <template lang="pug">
-
 g-main
-
 </template>
 
 <script>
@@ -16,7 +14,7 @@ export default {
 
 <style lang="sass">
   @import './assets/sass/variables'
-
+  
   body 
     margin: 0
     background: $primary-d
@@ -37,6 +35,7 @@ export default {
   @media (max-width: 800px)
     #app
       width: 100%
+      margin-bottom: 30px
 
 
 </style>

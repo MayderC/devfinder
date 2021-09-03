@@ -54,7 +54,7 @@ export default {
 @media (max-width: 800px)
   .header
     width: 80%
-    margin: auto
+    margin: 20px auto
   
   
 </style>

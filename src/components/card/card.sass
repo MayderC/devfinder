@@ -5,10 +5,11 @@ h1
   width: 750px
   height: 450px
   border-radius: 10px
-  padding: 30px
+  padding: 30px 30px 0px 30px
+  
 
 .card__header
-  height: 40%
+  height: 35%
   display: flex
   color: white
   flex-wrap: wrap
@@ -46,7 +47,7 @@ h1
 .card__body
   display: flex
   flex-direction: column
-  height: 55%
+  height: 65%
 
 .card__info
   width: calc( 100% )
@@ -83,8 +84,8 @@ h1
 
 .link > img, svg
   margin-right: 10px
+  min-width: 15px
   width: 15px
-
 .link > p
   text-decoration: underline
   padding: 5px
@@ -118,6 +119,7 @@ h1
   
   .card__header__date > p
     text-align: start
+    display: none
 
   .card__link > *
     max-width: 100%
@@ -140,4 +142,13 @@ h1
   
   .card__header__bio > .bio
     padding: 20px 0
+    width: 100%
+
+  .card__header__name > .user
+    padding: 20px 0
+
+  .card__body__links
+    flex-wrap: wrap
+  
+  .card__link
     width: 100%
