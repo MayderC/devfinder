@@ -2,19 +2,17 @@
 header.header
   .header__item.header__title
     h1 devfinder
-
-  .header__item-header__theme
-    .theme__item.light
-    .theme__item.dark
-
-  <!--   .header__item.header__controls-->
-    <!-- .controls__item.primary-->
-    <!-- .controls__item.secundary-->
-    <!--   .controls__item.tertiary-->
+  g-theme-switch
+    
 </template>
 <script>
+import GThemeSwitch from '../GThemeSwitch.vue'
+
 export default {
-  name: 'GHeader'
+  name: 'GHeader',
+  components: {
+    GThemeSwitch
+  }
 }
 </script>
 <style lang="sass">
@@ -23,6 +21,7 @@ export default {
     display: flex
     align-items: center
     justify-content: space-between
+    po
 
   .header__title
     color: white

@@ -11,7 +11,12 @@ export default createStore({
       api.getData(devName)
       .then(res => state.info = res)
       .catch(err => new Error("error en la peticion", err))
+    },
+
+    changeTheme(state){
+      state.isLight = !state.isLight
     }
+
   },
   actions: {
   },
