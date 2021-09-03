@@ -1,13 +1,15 @@
 # github-profile-search
 
 <img src="home.PNG">
-<img src="2.png">
+<img src="2.PNG">
 
 ## Tecnologias
 - [Vue js](https://cli.vuejs.org/)
 - Vuex 
 - Pug
 - Sass
+
+prueba mi aplicación aquí https://may-devfinder.netlify.app/
 ## Descripción
 App construida con vuejs para consumir los datos publicos de los perfiles de GitHub, utilizando su [Api](https://docs.github.com/en/rest/overview/resources-in-the-rest-api).
 
