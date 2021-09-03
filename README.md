@@ -1,10 +1,13 @@
 # github-profile-search
 
 <img src="home.PNG">
+<img src="2.png">
 
 ## Tecnologias
 - [Vue js](https://cli.vuejs.org/)
-
+- Vuex 
+- Pug
+- Sass
 ## Descripción
 App construida con vuejs para consumir los datos publicos de los perfiles de GitHub, utilizando su [Api](https://docs.github.com/en/rest/overview/resources-in-the-rest-api).
 

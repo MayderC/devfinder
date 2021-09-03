@@ -52,7 +52,10 @@ export default {
   .tertiary
     background: blue
 
-
+@media (max-width: 800px)
+  .header
+    width: 80%
+    margin: auto
   
   
 </style>

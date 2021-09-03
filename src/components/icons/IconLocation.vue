@@ -1,6 +1,6 @@
 <template>
   <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-    viewBox="0 0 512 512" :class="[isLight? 'night' : 'light']" xml:space="preserve">
+    viewBox="0 0 512 512" :class="[isLight ? 'light' : 'night']" xml:space="preserve">
     <g>
       <g>
         <path d="M256,0C156.011,0,74.667,81.344,74.667,181.333c0,96.725,165.781,317.099,172.843,326.443
@@ -13,7 +13,17 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
-  name: 'IconLocation'
+  name: 'IconLocation',
+  computed: {...mapState(['isLight'])}
 }
 </script>
+
+<style lang="sass" scoped>
+	.night
+		fill: #fff
+
+	.light
+		fill: black
+</style>

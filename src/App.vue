@@ -33,4 +33,10 @@ export default {
   *, *:before, *:after 
     box-sizing: border-box
 
+
+  @media (max-width: 800px)
+    #app
+      width: 100%
+
+
 </style>

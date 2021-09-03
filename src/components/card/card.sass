@@ -8,19 +8,25 @@ h1
   padding: 30px
 
 .card__header
-  height: 45%
+  height: 40%
   display: flex
   color: white
+  flex-wrap: wrap
+
+.card__header__info
+  display: flex
+  flex-wrap: wrap
+  width: 70%
 
 .card__header__name > .user
   padding: 20px 0
   color: #0279fd
 
-.card__header__name > .bio
-  color: gray
+.card__header__name
+  width: 50%
 
-.card__header__item
-  width: 33%
+.card__header__date 
+  width: 50%
 
 .card__header__date > p
   text-align: right
@@ -30,6 +36,7 @@ h1
   display: flex
   justify-content: center
   align-items: self-start
+  width: 30%
 
 .card__header__avatar > img
   width: 90px
@@ -72,15 +79,65 @@ h1
 .link
   display: flex
   justify-content: center
+  margin: 5px 0
 
 .link > img, svg
   margin-right: 10px
   width: 15px
 
 .link > p
-  color: #E1E1E1
   text-decoration: underline
   padding: 5px
+  white-space: nowrap
+  text-overflow: ellipsis
+  overflow: hidden
 
-.info__item > .text
+
+.info__item > .text, .bio
   color: gray
+
+
+@media (max-width: 800px)
+  .card
+    width: 80%
+    margin: auto
+    height: auto
+    padding-bottom: 0
+  
+  .card__header__info
+    padding-left: 20px
+  
+  .card__header__name 
+    width: 100%
+  
+  .card__header__name > .user
+    padding: 0
+
+  .card__header__date
+    width: 100%
+  
+  .card__header__date > p
+    text-align: start
+
+  .card__link > *
+    max-width: 100%
+
+  .card__info
+    flex-wrap: wrap
+    height: auto
+
+  .info__item
+    padding: 20px 15px
+    min-width: 229px
+
+  .card__header__bio > .bio
+    padding: 20px 0
+    width: 100%
+  
+@media  ( max-width: 361px )
+  .card
+    height: auto
+  
+  .card__header__bio > .bio
+    padding: 20px 0
+    width: 100%

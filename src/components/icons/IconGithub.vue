@@ -1,6 +1,6 @@
 <template>
   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-		viewBox="0 0 291.32 291.32" :class="[isLight? 'night' : 'light']" xml:space="preserve">
+		viewBox="0 0 291.32 291.32" :class="[isLight? 'light' : 'night']" xml:space="preserve">
 	<g>
 		<path  d="M145.66,0C65.219,0,0,65.219,0,145.66c0,80.45,65.219,145.66,145.66,145.66
 			s145.66-65.21,145.66-145.66C291.319,65.219,226.1,0,145.66,0z M186.462,256.625c-0.838-11.398-1.775-25.518-1.83-31.235
@@ -16,7 +16,19 @@
 </svg>
 </template>
 <script>
+import { mapState } from 'vuex'
 export default {
-  name : 'IconGithub'
+  name : 'IconGithub',
+	computed: {...mapState(['isLight'])}
 }
 </script>
+
+<style lang="sass" scoped>
+
+	.night
+		fill: #fff
+
+	.light
+		fill: black
+
+</style>

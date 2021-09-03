@@ -26,13 +26,15 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name : 'IconLink',
   data(){
     return {
-      isLight : false
     }
-  }
+  },
+  computed: {...mapState(['isLight'])}
 }
 </script>
 
