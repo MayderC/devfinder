@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { mapMutations, mapState } from 'vuex'
+import { mapActions, mapState } from 'vuex'
 import GButtomMain from '../GButtonMain.vue'
 export default {
   name: 'GSearch',
@@ -29,7 +29,7 @@ export default {
   },
   methods: {
 
-    ...mapMutations(['getInfo'])
+    ...mapActions(['getInfo'])
 
   },
   computed: {

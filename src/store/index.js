@@ -6,11 +6,11 @@ export default createStore({
     info : {},
     isLight : false
   },
+  // fix mutations, not async
   mutations: {
-    getInfo(state, devName){
-      api.getData(devName)
-      .then(res => state.info = res)
-      .catch(err => new Error("error en la peticion", err))
+    
+    setInfo(state, info){
+      state.info = info
     },
 
     changeTheme(state){
@@ -19,7 +19,27 @@ export default createStore({
 
   },
   actions: {
+
+    getInfo({commit} ,devName){
+
+
+      api.getData(devName)
+      .then(res => {
+        commit('setInfo', res)
+      })
+      .catch(err => new Error("error en la peticion", err))
+    },
+
+
+    theme({commit}){
+
+      commit('changeTheme')
+
+    }
+
   },
+
+
   modules: {
   }
 })

@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import { mapMutations, mapState } from 'vuex'
+import { mapActions, mapState } from 'vuex'
 export default {
   name : "GThemeSwitch",
   computed: {
@@ -14,14 +14,15 @@ export default {
   },
 
   methods: {
-    ...mapMutations(['changeTheme']),
+
+    ...mapActions(['theme']),
 
     clickTheme(){
       const btnCircle = document.getElementById('btn-item')
 
       btnCircle.classList.toggle('toggle')
 
-      this.changeTheme()
+      this.theme()
 
     }
 
